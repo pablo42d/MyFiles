@@ -1,0 +1,167 @@
+/* external styles, code snippets for index.html */
+/* <link href="CSS/styles.css" type="text/css" rel="stylesheet" /> */
+/* <title>My Study Page</title> */
+/* CSS for the entire page */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: hsl(66, 88%, 74%);
+    color: #333;
+    }
+h1 {
+    text-align: center;
+    }
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+        }
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+        }
+
+
+
+/* div.container {
+    font-size: 20px;
+}
+div.container h2 {
+    font-size: 1rem;
+} */
+
+div.container {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 20px;
+    color: #17cf3f;
+    text-align: center;
+    padding: 5px;
+    background-color: #f0f0f0;
+}
+j {
+    font-size: 1em;
+    color: #ff811a;
+    margin: 10px 0;
+
+}
+
+
+* {
+    font-family: Arial, Verdena, sans-serif;
+    }
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    }
+i {
+    color: green;
+    }
+i {
+    color: red;
+    }
+b {
+    color: pink;
+    }
+p b {
+    color: blue !important;
+    }
+p b {
+    color: violet;
+    }
+p#intro {
+    font-size: 100%;
+    }
+p {
+    font-size: 75%;
+    }
+j {
+    color:rgb(238, 31, 186)
+}
+k { 
+    /* text-transform */
+    text-transform: uppercase;
+    /* text-transform: lowercase;
+    text-transform: capitalize; */
+}
+
+h3.credit {
+    text-decoration: underline;
+    l {
+        text-decoration: none;
+     }
+    }
+
+h3 {
+    background-color: #665544;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0.05em #333;
+
+}
+
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+/* Link styles */
+
+/* unvisited link */
+a:link {
+  color: blue;
+    text-decoration: none;
+}
+
+/* visited link */
+
+a:visited {
+    color: green;
+}
+
+/* a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: green;
+  color: white;
+} */
+
+mouse over link */
+a:hover {
+  color: hotpink;
+
+}
+
+/* selected link */
+/* a:active {
+  color: blue;
+    text-decoration: underline;
+}
+
+
+
+a:link {
+  text-decoration: none;
+} */
+
+/* a:visited {
+  text-decoration: underline;
+} */
+
+/* a:hover {
+  text-decoration: underline;
+    color: red;
+} */
+
+/* a:active {
+  text-decoration: underline;
+}  */
