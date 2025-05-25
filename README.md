@@ -2,7 +2,7 @@
 
 https://github.com/pablo42d/MyFiles.git
 
-echo "# dyskretnaona" >> README.md
+echo "# MyFile" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
