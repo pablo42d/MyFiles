@@ -1,0 +1,1 @@
+// <script src="../Java/skrypt.js"></script>
