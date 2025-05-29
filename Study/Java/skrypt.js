@@ -716,6 +716,226 @@ function liczbyDoskonaleDoN(n) {
     return doskonale;
 }
 
+// Funkcja getArea przyjmuje dwa argumenty: szerokość i wysokość, a następnie zwraca pole prostokąta.
+
+function getArea(width, height) {
+    return width * height;
+}
+getArea(5, 10); // Wynik 50
+
+// Funkcje wymagające informacji (argumentów) są bardziej elastyczne i mogą być używane w różnych kontekstach, ponieważ przyjmują różne wartości wejściowe.
+// Funkcje bez argumentów są bardziej statyczne i nie mogą być używane w różnych kontekstach, ponieważ zawsze zwracają tę samą wartość.
+
+function calcArea(width, height) {
+    return width * height;
+}
+var areaOne = calcArea(5, 10); // Wynik 50
+var areaTwo = calcArea(7, 3); // Wynik 21
+// Funkcje są blokami kodu, które można wielokrotnie wywoływać
+// Funkcje mogą przyjmować argumenty i zwracać wartości
+// Funkcje mogą być anonimowe i przypisane do zmiennych
+// Funkcje mogą być zdefiniowane jako funkcje strzałkowe (arrow functions) lub tradycyjne funkcje
+// Funkcje mogą być zagnieżdżone, co oznacza, że jedna funkcja może wywoływać inną funkcję
+// Funkcje mogą być przekazywane jako argumenty do innych funkcji
+// Funkcje mogą być zwracane z innych funkcji, co pozwala na tworzenie funkcji wyższego rzędu
+// Funkcje mogą być używane do tworzenia modułów, które grupują powiązane funkcje i zmienne
+// Funkcje mogą być używane do tworzenia klas i obiektów, które grupują powiązane funkcje i zmienne
+// Funkcje mogą być używane do tworzenia zdarzeń, które reagują na interakcje użytkownika
+// Funkcje mogą być używane do tworzenia asynchronicznych operacji, które wykonują się w tle i nie blokują głównego wątku programu
+// Zwrot wielu wartości z funkcji
+function getSize(width, height, depth) {
+    var area = width * height; // Oblicza pole
+    var volume = width * height * depth; // Oblicza pole i objętość
+    var size = [area, volume]; // Tworzy tablicę z polem i objętością
+    return size; // Zwraca tablicę z polem i objętością
+}
+var areaTry = getSize(5, 10, 2) [0]; // Wywołuje funkcję i przypisuje wynik do zmiennej areaTry
+var volumeTwo = getSize(5, 10, 2) [1]; // Wywołuje funkcję i przypisuje wynik do zmiennej volumeTwo
+// console.log("Pole:", areaTry); // Wynik 50
+// console.log("Objętość:", volumeTwo); // Wynik 100
+// Parametry a argumenty funkcji
+// Parametry to zmienne, które są zdefiniowane w funkcji i służą do przyjmowania wartości wejściowych   
+// Argumenty to wartości, które są przekazywane do funkcji podczas jej wywołania
+// Parametry są używane do definiowania funkcji, a argumenty są używane do wywoływania funkcji
+// Przykład funkcji z parametrami i argumentami
+
+function przykladFunkcji(parametr1, parametr2) {
+    return parametr1 + parametr2;
+}
+var wynik = przykladFunkcji(5, 10); // Wywołanie funkcji z argumentami 5 i 10
+console.log("Wynik:", wynik); // Wynik 15
+
+
+function args() {
+    return arguments; // Funkcja zwraca argumenty przekazane do niej
+}
+console.log(args()); // Wynik [Arguments] - obiekt zawierający argumenty przekazane do funkcji
+console.log(args(1, 2, 3)); // Wynik [1, 2, 3] - argumenty przekazane do funkcji
+
+
+// Funkcje strzałkowe (arrow functions) 
+// Funkcje strzałkowe to skrócona składnia funkcji w JavaScript, która pozwala na tworzenie funkcji bez użycia słowa kluczowego 'function'
+const dodajStrzalkowo = (a, b) => a + b; // Funkcja strzałkowa do dodawania dwóch liczb
+const mnozStrzalkowo = (a, b) => a * b; // Funkcja strzałkowa do mnożenia dwóch liczb   
+const dzielStrzalkowo = (a, b) => {
+    if (b === 0) {
+        console.error("Nie można dzielić przez zero");
+        return null;
+    }
+    return a / b;
+}   
+const odejmijStrzalkowo = (a, b) => a - b; // Funkcja strzałkowa do odejmowania dwóch liczb
+
+// Funkcje anonimowe
+// Funkcje anonimowe to funkcje, które nie mają nazwy i są często używane jako argumenty dla innych funkcji
+const dodajAnonimowo = function(a, b) {
+    return a + b; // Funkcja anonimowa do dodawania dwóch liczb
+}   
+const mnozAnonimowo = function(a, b) {
+    return a * b; // Funkcja anonimowa do mnożenia dwóch liczb
+}
+// Funkcje zagnieżdżone
+// Funkcje zagnieżdżone to funkcje, które są zdefiniowane wewnątrz innych funkcji
+function zagniezdzonaFunkcja() {
+    const wewnetrznaFunkcja = (a, b) => a + b; // Funkcja zagnieżdżona do dodawania dwóch liczb
+    return wewnetrznaFunkcja(5, 10); // Wywołanie funkcji zagnieżdżonej
+}
+console.log("Wynik funkcji zagnieżdżonej:", zagniezdzonaFunkcja()); // Wynik 15
+// Funkcje wyższego rzędu
+// Funkcje wyższego rzędu to funkcje, które mogą przyjmować inne funkcje jako argumenty lub zwracać funkcje jako wynik
+function funkcjaWyższegoRzedu(funkcja, a, b) {
+    return funkcja(a, b);
+}
+console.log("Wynik funkcji wyższego rzędu:", funkcjaWyższegoRzedu(dodajStrzalkowo, 5, 10)); // Wynik 15
+
+function sum () {
+    console.log(arguments); // Wyświetla wszystkie argumenty przekazane do funkcji
+}
+sum(1, 2, 3); // Wywołanie funkcji z argumentami 1, 2, 3
+sum("ala", "ma", "kota"); // Wywołanie funkcji z argumentami "ala", "ma", "kota"
+
+
+function print(name = "Paweł", status = "najlepszym programista") {
+    console.log(name + " jest " + status);
+}
+
+print(); // Wywołanie funkcji bez argumentów, użyje domyślnych wartości
+print("Jan"); // Wywołanie funkcji z argumentami, nadpisze domyślne wartości
+print("Michał", "wysoki"); // Wywołanie funkcji z argumentami, nadpisze domyślne wartości
+print(undefined, "programistą"); // Wywołanie funkcji z jednym argumentem, drugi użyje domyślnej wartości
+
+// Parametry reszty
+// Parametry reszty to specjalny typ parametru, który pozwala na przekazywanie nieokreślonej liczby argumentów do funkcji
+
+function superSum(...r) {
+    console.log(r); // Wyświetla wszystkie argumenty przekazane do funkcji
+}
+superSum(1, 2, 3); // Wywołanie funkcji z argumentami 1, 2, 3
+
+// lub 
+
+function suma(...liczby) {
+    return liczby.reduce((acc, curr) => acc + curr, 0);
+}
+console.log("Suma:", suma(1, 2, 3, 4, 5)); // Wynik 15
+
+// Funkcje rekurencyjne
+// Funkcje rekurencyjne to funkcje, które wywołują same siebie w celu rozwiązania problemu
+function silniaRekurencyjna(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * silniaRekurencyjna(n - 1);
+}
+
+console.log("Silnia rekurencyjna z 5:", silniaRekurencyjna(5)); // Wynik 120
+
+
+// Funkcje asynchroniczne
+// Funkcje asynchroniczne to funkcje, które wykonują się w tle i nie blokują głównego wątku programu
+async function pobierzDane() {
+    try {
+        const response = await fetch("https://api.example.com/data");
+        const data = await response.json();
+        console.log("Dane:", data);
+    } catch (error) {
+        console.error("Błąd podczas pobierania danych:", error);
+    }
+}
+
+// Wywołanie funkcji asynchronicznej
+pobierzDane(); // Wywołanie funkcji asynchronicznej, która pobiera dane z API
+
+// Zmienne globalne i lokalne
+// Zmienne globalne są dostępne w całym kodzie, natomiast zmienne lokalne są dostępne tylko w obrębie funkcji lub bloku kodu, w którym zostały zdefiniowane
+let zmiennaGlobalna = "Jestem zmienną globalną"; // Zmienna globalna
+function funkcjaLokalna() {
+    let zmiennaLokalna = "Jestem zmienną lokalną"; // Zmienna lokalna
+}
+console.log(zmiennaGlobalna); // Wyświetla zmienną globalną
+// console.log(zmiennaLokalna); // Błąd: zmiennaLokalna nie jest zdefiniowana, ponieważ jest lokalna
+
+var global =1;
+function test() {
+    var local = 2; // Zmienna lokalna
+    global++; // Zmienna globalna
+    return global; // Zwraca zmienną globalną
+}
+console.log("Wynik funkcji test:", test()); // Wynik 2
+
+// Wynoszenie zmiennych
+// Wynoszenie zmiennych (hoisting) to mechanizm w JavaScript, który polega na przenoszeniu deklaracji zmiennych i funkcji na początek ich zakresu
+// Zmienne zadeklarowane za pomocą var są wynoszone na początek funkcji lub globalnego zakresu
+var zmiennaWynoszona = "Jestem wynoszoną zmienną"; // Zmienna wynoszona
+function funkcjaWynoszona() {
+    alert(zmiennaWynoszona);
+    var zmiennaWynoszona = "Zmienna wynoszona w funkcji"; // Zmienna wynoszona w funkcji
+    alert(zmiennaWynoszona); // Wyświetla zmienną wynoszoną w funkcji
+}
+funkcjaWynoszona(); // Wywołanie funkcji, która wyświetla zmienną wynoszoną w funkcji
+
+
+// Zmienne blokowe
+// Zmienne blokowe są dostępne tylko w obrębie bloku kodu, w którym zostały zdefiniowane
+var A = 1;
+{
+    let A = "Jestem zmienną blokową"; // Zmienna blokowa
+    console.log(A); // Wyświetla zmienną blokową
+}
+console.log(A); // Wyświetla zmienną globalną, ponieważ zmienna blokowa jest dostępna tylko w obrębie bloku kodu
+
+// Funkcje anonimowe
+// Funkcje anonimowe to funkcje, które nie mają nazwy i są często używane jako argumenty dla innych funkcji
+var f = function(a) {
+    return a * 2;
+};
+// Wywołanie funkcji anonimowej
+console.log("Wynik funkcji anonimowej:", f(5)); // Wynik 10
+
+// Wywołanie zwrotne
+// Wywołanie zwrotne (callback) to funkcja, która jest przekazywana jako argument do innej funkcji i jest wywoływana po zakończeniu działania tej funkcjifunt
+
+function invokeAdd(a, b) {
+    return a() + b(); // Funkcja zwrotna do dodawania dwóch liczb
+}
+function one () {
+    return 1; // Funkcja zwrotna zwracająca 1
+}
+
+function two () {
+    return 2; // Funkcja zwrotna zwracająca 2
+}
+// Wywołanie funkcji zwrotnej
+console.log("Wynik wywołania zwrotnego:", invokeAdd(one, two)); // Wynik 3
+
+// Funkcje wewnętrzne (prywatne)
+function outr(param) {
+    function inner(theinput) {
+        return input * 2; // Funkcja wewnętrzna do mnożenia przez 2
+    }
+return "Wynik funkcji wewnętrznej: " + inner(param); // Wywołanie funkcji wewnętrznej
+}
+console.log(outr(5)); // Wywołanie funkcji wewnętrznej, wynik 10
 
 // TABLICE
 
@@ -787,3 +1007,73 @@ const tablicaForEach = [1, 2, 3, 4, 5];
 tablicaForEach.forEach((element, index) => {
     console.log(`Element na indeksie ${index}:`, element); // Wyświetla każdy element w tablicy z jego indeksem
 });
+
+// Wypełnienie tablicy  
+const tab1 = new Array(20); // Tworzenie tablicy o długości 5 wypełnionej zerami
+console.log("Pusta tablica:", tab1); // Wynik [undefined, undefined, undefined, undefined, undefined]
+tab1.fill(0); // Wypełnienie tablicy zerami
+console.log("Tablica wypełniona zerami:", tab1); // Wynik [0, 0, 0, 0, 0]
+// Wypełnienie tablicy liczbami od 1 do 20
+for (let i = 0; i < tab1.length; i++) {
+    tab1[i] = i + 1;
+}
+console.log("Tablica wypełniona liczbami od 1 do 20:", tab1); // Wynik [1, 2, 3, ..., 20]
+
+// Wypełnienie tablicy losowymi liczbami
+const tablicaLosowa = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100)); // Tworzenie tablicy o długości 10 z losowymi liczbami od 0 do 99
+console.log("Tablica losowa:", tablicaLosowa);
+
+
+// Tablice wielowymiarowe   
+// Tworzenie tablicy dwuwymiarowej
+const tablicaDwuwymiarowa = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+console.log("Tablica dwuwymiarowa:", tablicaDwuwymiarowa); // Wynik [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+var tablica3 = [];
+// deklaracja drugiego wymiaru
+for (var i = 0; i < iloscWierszy; i++) {
+    tablica3[i] = [];
+}
+// wypełnienie tablicy
+for (var i = 0; i < iloscWierszy; i++) {
+    for (var j = 0; j < iloscKolumn; j++) {
+        tablica3[i][j] = i + j;
+    }
+}
+
+// Dostęp do elementów tablicy dwuwymiarowej
+console.log("Element w pierwszym wierszu i pierwszej kolumnie:", tablicaDwuwymiarowa[0][0]); // Wynik 1
+console.log("Element w drugim wierszu i trzeciej kolumnie:", tablicaDwuwymiarowa[1][2]); // Wynik 6
+// Iterowanie po tablicy dwuwymiarowej
+for (var i = 0; i < iloscWierszy; i++) {
+    for (var j = 0; j < iloscKolumn; j++) {
+        console.log("Element w wierszu " + i + " i kolumnie " + j + ":", tablica3[i][j]);
+    }
+}
+// Spłaszczanie tablicy dwuwymiarowej
+const spłaszczonaTablicaDwuwymiarowa = tablicaDwuwymiarowa.flat(); // Spłaszczanie tablicy dwuwymiarowej
+console.log("Spłaszczona tablica dwuwymiarowa:", spłaszczonaTablicaDwuwymiarowa); // Wynik [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// Łączenie tablicy dwuwymiarowej
+const tablicaDwuwymiarowa2 = [
+    [10, 11, 12],
+    [13, 14, 15],
+    [16, 17, 18]
+];
+const polaczonaTablicaDwuwymiarowa = tablicaDwuwymiarowa.concat(tablicaDwuwymiarowa2); // Łączenie dwóch tablic dwuwymiarowych
+console.log("Połączona tablica dwuwymiarowa:", polaczonaTablicaDwuwymiarowa); // Wynik [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18]]
+// Sprawdzanie, czy tablica dwuwymiarowa zawiera dany element
+console.log("Czy tablica dwuwymiarowa zawiera 5?", tablicaDwuwymiarowa.some(wiersz => wiersz.includes(5))); // Wynik true
+// Sprawdzanie indeksu elementu w tablicy dwuwymiarowej
+console.log("Indeks elementu 5:", tablicaDwuwymiarowa.findIndex(wiersz => wiersz.includes(5))); // Wynik 1
+// Sprawdzanie ostatniego indeksu elementu w tablicy dwuwymiarowej
+console.log("Ostatni indeks elementu 5:", tablicaDwuwymiarowa.findLastIndex(wiersz => wiersz.includes(5))); // Wynik 1
+// Odwracanie tablicy dwuwymiarowej
+const odwroconaTablicaDwuwymiarowa = tablicaDwuwymiarowa.map(wiersz => wiersz.slice().reverse()); // Odwracanie każdego wiersza tablicy dwuwymiarowej
+console.log("Odwrócona tablica dwuwymiarowa:", odwroconaTablicaDwuwymiarowa); // Wynik [[3, 2, 1], [6, 5, 4], [9, 8, 7]]
+// Sortowanie tablicy dwuwymiarowej
+const posortowanaTablicaDwuwymiarowa = tablicaDwuwymiarowa.map(wiersz => wiersz.slice().sort((a, b) => a - b)); // Sortowanie każdego wiersza tablicy dwuwymiarowej rosnąco
+console.log("Posortowana tablica dwuwymiarowa:", posortowanaTablicaDwuwymiarowa); // Wynik [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
