@@ -124,7 +124,7 @@ console.log("Minimalna wartość:", Math.min(1, 2, 3)); // Wynik 1 (najmniejsza 
 console.log("Zwraca najmniejszą liczbę całkowitą większą lub równą podanej liczbie:", Math.ceil(4.1)); // Wynik 5
 console.log("Zwraca największą liczbę całkowitą mniejszą lub równą podanej liczbie:", Math.floor(4.9)); // Wynik 4
 
-// Przykład
+// Przykład losowa liczba z przedziału
 const min = 1;
 const max = 10;
 const losowaLiczba = Math.floor(Math.random() * (max - min + 1)) + min; // Losowa liczba z zakresu 1-10
@@ -147,6 +147,8 @@ console.log("Wytnij tekst od indeksu 7:", tekst.slice(7)); // Wynik World!
 console.log("Wytnij tekst od indeksu 7 do 12:", tekst.slice(7, 12)); // Wynik World
 console.log("Wytnij tekst od indeksu 0 do 5:", tekst.substring(0, 5)); // Wynik Hello
 
+// Poruszanie się po znakach w tekście
+
 for (let i = 0; i < tekst.length; i++) {
     console.log("Znak na indeksie " + i + ":", tekst.charAt(i)); // Wyświetla każdy znak w tekście
     console.log( tekst[i]);
@@ -154,11 +156,13 @@ for (let i = 0; i < tekst.length; i++) {
 for (const znak of tekst) {
     console.log("Znak:", znak); // Wyświetla każdy znak w tekście
 }
+
 // Zmiana textu
 const zmienionyTekst = tekst.replace("World", "JavaScript");
 console.log("Zmieniony tekst:", zmienionyTekst); // Wynik Hello, JavaScript!
 // lub inny sposób
 tablicaTekst = tekst.split(" "); // Podziel tekst na tablicę słów
+
 // Wyświetlenie każdego słowa w tablicy
 for (const slowo of tablicaTekst) {
     console.log("Słowo:", slowo);
@@ -209,8 +213,65 @@ let tekstZWiekem = "Mam " + wiek + " lat."; // Użycie konkatenacji stringów
 console.log("Tekst z wiekiem:", tekstZWiekem); // Wynik Mam 30 lat.
 
 
+// Pobieranie znaku na danj pozycji 
 
+console.log("Znak na pozycji 0:", tekst.charAt(0)); // Wynik H
+console.log("Znak na pozycji 4:", tekst.charAt(4)); // Wynik o
 
+// Pobieranie znaku na danej pozycji w tablicy
+const tablicaZnakow = [...tekst]; // Przypisanie tekstu do tablicy znaków
+console.log("Znak na pozycji 0 w tablicy:", tablicaZnakow[0]); // Wynik H
+console.log("Znak na pozycji 4 w tablicy:", tablicaZnakow[4]); // Wynik o
+
+console.log(tekst.charAt(tekst.length - 1)); // Pobranie ostatniego znaku w tekście
+console.log(tablicaZnakow[tablicaZnakow.length - 1]); // Pobranie ostatniego znaku w tablicy znaków
+
+// Funkcja UpperCase i LowerCase
+// Funkcja toUpperCase() zamienia wszystkie znaki w tekście na wielkie litery
+// Funkcja toLowerCase() zamienia wszystkie znaki w tekście na małe litery
+const tekstDuzeLitery = tekst.toUpperCase(); // Zamiana na wielkie litery
+const tekstMaleLitery = tekst.toLowerCase(); // Zamiana na małe litery
+console.log("Tekst z wielkimi literami:", tekstDuzeLitery); // Wynik HELLO, WORLD!
+console.log("Tekst z małymi literami:", tekstMaleLitery); // Wynik hello, world!
+
+// Funkcja indexOf i lastIndexOf
+// Funkcja indexOf() zwraca indeks pierwszego wystąpienia podanego znaku lub tekstu
+// Funkcja lastIndexOf() zwraca indeks ostatniego wystąpienia podanego znaku lub tekstu
+const tekstDoSzukania = "To jest tekst do szukania. To jest tekst do szukania.";
+const indeksPierwszegoWystapienia = tekstDoSzukania.indexOf("tekst"); // Indeks pierwszego wystąpienia "tekst"
+const indeksOstatniegoWystapienia = tekstDoSzukania.lastIndexOf("tekst"); // Indeks ostatniego wystąpienia "tekst"
+console.log("Indeks pierwszego wystąpienia 'tekst':", indeksPierwszegoWystapienia); // Wynik 6
+console.log("Indeks ostatniego wystąpienia 'tekst':", indeksOstatniegoWystapienia); // Wynik 30
+
+// Funkcja startsWith i endsWith
+// Funkcja startsWith() sprawdza, czy tekst zaczyna się od podanego znaku lub tekstu
+// Funkcja endsWith() sprawdza, czy tekst kończy się na podanym znaku lub tekście
+const tekstDoSprawdzenia = "To jest tekst do sprawdzenia.";
+const czyZaczynaSieOd = tekstDoSprawdzenia.startsWith("To"); // Sprawdzenie, czy tekst zaczyna się od "To"
+const czyKonczySieNa = tekstDoSprawdzenia.endsWith("."); // Sprawdzenie, czy tekst kończy się na "." (true)
+console.log("Czy tekst zaczyna się od 'To':", czyZaczynaSieOd); // Wynik true
+console.log("Czy tekst kończy się na '.':", czyKonczySieNa); // Wynik true
+
+// Funkcja substring i length
+// Funkcja substring() zwraca część tekstu od podanego indeksu początkowego do końcowego
+// Funkcja length zwraca długość tekstu
+const tekstDoPodzialu = "To jest tekst do podziału.";
+const podzielonyTekst = tekstDoPodzialu.substring(0, 10); // Podział tekstu od indeksu 0 do 10
+const dlugoscTekstu = tekstDoPodzialu.length; // Długość tekstu
+console.log("Podzielony tekst:", podzielonyTekst); // Wynik To jest tekst
+console.log("Długość tekstu:", dlugoscTekstu); // Wynik 27
+
+// Funkcja slice
+// Funkcja slice() zwraca część tekstu od podanego indeksu początkowego do końcowego
+const tekstDoWycięcia = "To jest tekst do wycięcia.";
+const wycietyTekst = tekstDoWycięcia.slice(0, 10); // Wycięcie tekstu od indeksu 0 do 10
+console.log("Wycięty tekst:", wycietyTekst); // Wynik To jest teks
+
+// Funkcja split
+// Funkcja split() dzieli tekst na tablicę elementów na podstawie podanego separatora
+const tekstDoPodzialu2 = "To jest tekst do podziału.";
+const podzielonyTekst2 = tekstDoPodzialu2.split(" "); // Podział tekstu na słowa
+console.log("Podzielony tekst na słowa:", podzielonyTekst2); // Wynik ["To", "jest", "tekst", "do", "podziału."]
 
 
 // Operatory arytmetyczne
@@ -656,3 +717,73 @@ function liczbyDoskonaleDoN(n) {
 }
 
 
+// TABLICE
+
+// Tworzenie tablicy
+const tablica1 = [1, 2, 3, 4, 5];
+console.log("Tablica:", tablica1);
+
+// Dodawanie elementów do tablicy
+tablica1.push(6); // Dodanie elementu na końcu tablicy  
+console.log("Tablica po dodaniu elementu:", tablica1); // Wynik [1, 2, 3, 4, 5, 6]
+tablica1.unshift(0); // Dodanie elementu na początku tablicy
+console.log("Tablica po dodaniu elementu na początku:", tablica1); // Wynik [0, 1, 2, 3, 4, 5, 6]
+// Usuwanie elementów z tablicy
+tablica1.pop(); // Usunięcie ostatniego elementu z tablicy
+console.log("Tablica po usunięciu ostatniego elementu:", tablica1); // Wynik [0, 1, 2, 3, 4, 5]
+tablica1.shift(); // Usunięcie pierwszego elementu z tablicy
+console.log("Tablica po usunięciu pierwszego elementu:", tablica1); // Wynik [1, 2, 3, 4, 5]
+// Modyfikowanie elementów w tablicy
+tablica1[0] = 10; // Zmiana wartości pierwszego elementu tablicy
+console.log("Tablica po zmianie pierwszego elementu:", tablica1); // Wynik [10, 2, 3, 4, 5]
+// Iterowanie po tablicy
+for (let i = 0; i < tablica1.length; i++) {
+    console.log("Element na indeksie " + i + ":", tablica1[i]); // Wyświetla każdy element w tablicy
+}
+// Enumerowanie tablicy
+for (const element of tablica1) {
+    console.log("Element:", element); // Wyświetla każdy element w tablicy
+}
+// Sprawdzanie długości tablicy
+console.log("Długość tablicy:", tablica1.length); // Wynik 5    
+// Łączenie tablic
+const tablica2 = [6, 7, 8];
+const polaczonaTablica = tablica1.concat(tablica2); // Łączenie dwóch tablic
+console.log("Połączona tablica:", polaczonaTablica); // Wynik [10, 2, 3, 4, 5, 6, 7, 8]
+// Sprawdzanie, czy tablica zawiera dany element
+console.log("Czy tablica zawiera 3?", tablica1.includes(3)); // Wynik true
+// Sprawdzanie indeksu elementu w tablicy
+console.log("Indeks elementu 3:", tablica1.indexOf(3)); // Wynik 2
+// Sprawdzanie ostatniego indeksu elementu w tablicy
+console.log("Ostatni indeks elementu 3:", tablica1.lastIndexOf(3)); // Wynik 2
+// Odwracanie tablicy
+const odwroconaTablica = tablica1.slice().reverse(); // Odwracanie tablicy
+console.log("Odwrócona tablica:", odwroconaTablica); // Wynik [5, 4, 3, 2, 10]
+// Sortowanie tablicy
+const posortowanaTablica = tablica1.slice().sort((a, b) => a - b); // Sortowanie tablicy rosnąco
+console.log("Posortowana tablica:", posortowanaTablica); // Wynik [2, 3, 4, 5, 10]
+// Spłaszczanie tablicy
+const zagniezdzonaTablica = [1, [2, 3], [4, 5]];
+const splaszczonaTablica = zagniezdzonaTablica.flat();
+console.log("Spłaszczona tablica:", splaszczonaTablica); // Wynik [1, 2, 3, 4, 5]
+// Mapowanie tablicy
+const tablicaMap = [1, 2, 3, 4, 5];
+const podwojonaTablica = tablicaMap.map(element => element * 2); // Podwajanie każdego elementu tablicy
+console.log("Podwojona tablica:", podwojonaTablica); // Wynik [2, 4, 6, 8, 10]
+
+// Pętla for .. of
+const tablicaForOf = [1, 2, 3, 4, 5];
+for (const element of tablicaForOf) {
+    console.log("Element w pętli for .. of:", element); // Wyświetla każdy element w tablicy
+}   
+// lub inny sposób
+
+const countries = ["Polska", "Niemcy", "Francja", "Hiszpania"];
+for (const country of countries) {
+    console.log("Kraj:", country.toUpperCase()); // Wyświetla każdy kraj w tablicy
+}
+// Pętla forEach
+const tablicaForEach = [1, 2, 3, 4, 5];
+tablicaForEach.forEach((element, index) => {
+    console.log(`Element na indeksie ${index}:`, element); // Wyświetla każdy element w tablicy z jego indeksem
+});
