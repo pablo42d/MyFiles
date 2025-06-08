@@ -43,6 +43,7 @@ public class instrukcjaWarunkowa {
         System.out.println(tenDaysPrice);
 
         System.out.println(getDriverLicense(16));
+        System.out.println(GetDriverlicense(13));
     }
 //------------------------------------------------------------------------
     public static int getRentalPrice(int days) {
@@ -64,10 +65,17 @@ public class instrukcjaWarunkowa {
         if (age < 16) {
             return "You can't get a license";
         }
+            return "You can get a license";
+
+    }
+// ----------------------- inny ---------------------------------------------------
+
+    public static String GetDriverlicense(int age) {
         if (age >= 16) {
             return "You can get a license";
+        } else {
+            return "You can't get a license";
         }
-        return "Invalid age";
     }
 
 }
