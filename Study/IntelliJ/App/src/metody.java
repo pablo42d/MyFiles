@@ -35,8 +35,8 @@ public class metody {
 
 
 //  modifiers: public static
-//  return type: void (nic nie zwraca) String, int, itd
-//    method name: int
+//  return type: void (nic nie zwraca) String, int, itd. (return)
+//    method name: printRectInfo
 //    input params: int height, int width
 //    body{....}
     public static void printRectInfo(int hight, int width) {
