@@ -44,6 +44,10 @@ public class instrukcjaWarunkowa {
 
         System.out.println(getDriverLicense(16));
         System.out.println(GetDriverlicense(13));
+
+        System.out.println(calculateTaxes(10001));
+
+        System.out.println(getTipsRating(51));
     }
 //------------------------------------------------------------------------
     public static int getRentalPrice(int days) {
@@ -76,6 +80,35 @@ public class instrukcjaWarunkowa {
         } else {
             return "You can't get a license";
         }
+    }
+
+    public static double calculateTaxes(double income) {
+
+        if (income <= 1000) {
+            return income * 0.02;
+        }
+        if (income >=1001 && income <= 10000) {
+            return income * 0.03;
+        }
+        return income * 0.05;
+
+    }
+
+    public static String getTipsRating(int amount) {
+        if (amount == 0) {
+            return "terrible";
+        }
+        if (amount <= 10) {
+            return "poor";
+        }
+        if (amount > 10 && amount <= 20) {
+            return "good";
+        }
+        if (amount > 20 && amount <= 50) {
+            return "great";
+        }
+        return "excellent";
+
     }
 
 }
