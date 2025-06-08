@@ -29,6 +29,8 @@ public class metody {
         System.out.println(result);
         System.out.println("___________________");
 
+
+
     }
 
 
