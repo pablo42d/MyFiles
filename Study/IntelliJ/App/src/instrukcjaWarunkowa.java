@@ -1,5 +1,10 @@
 public class instrukcjaWarunkowa {
     public static void main(String[] args) {
+
+//  if (warunek) {
+//   ciało_instrukcji
+//}
+
         int x = 10;
 
         if (x < 2) {
